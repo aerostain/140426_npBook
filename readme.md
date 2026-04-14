@@ -8,6 +8,13 @@ Labores de hoy:
 - Funciones dplyr y ggplot.
 - Data Cleaning.
 
+Pendientes:
+
+- Funciones para gráficar:
+  - Boxplot con grupos| incluir facet_wrap
+  - Histogramas
+  - Pruebas chi-squared
+
 Flujo de analisis de tablas:
 
 ```mermaid
