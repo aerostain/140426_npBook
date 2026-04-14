@@ -53,6 +53,30 @@ s %>%
   ggplot(aes(season, viewers, group = season)) +
   geom_boxplot(width = .2)
 
+# One Sample
+
+## Proportions - Parametric
+
+p <- 10 / 143
+za2 <- qnorm(.975)
+p + c(-1, 1) * za2 * sqrt(p * (1 - p) / 143)
+
+prop.test(10, 143, correct = FALSE)
+
+binom.test(10, 143, .5)
+
+baseball %>% head()
+baseball %>% dim()
+baseball %>% filter(throw == "L")
+
+z <- (15 / 59 - .15) / (sqrt((.15) * (.85) / 59))
+1 - pchisq(z^2, 1)
+
+prop.test(15, 59, .15, correct = FALSE)
+
+binom.test(15,59,.15)
+
+help(wilcox.test)
 
 help(qqplot)
 
