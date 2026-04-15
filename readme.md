@@ -17,7 +17,17 @@ Pendientes:
 
 ## Proporciones
 
-Para 1 proporción usar 1 de 3 métodos:
+$S$= Número de éxitos en muestra $n$.
+
+El valor estimado de p es: 
+
+$$\hat{p}=\frac{S}{n}$$
+
+Intervalos: 
+
+$$\hat{p} \pm z_{\alpha/2}\sqrt{\hat{p}(1-\hat{p})/n}$$
+
+Para prueba de hipotesis para 1 proporción usar uno de estos 3 métodos:
 
 - Cálculo manual (Aprox. Normal)
 
@@ -31,6 +41,8 @@ $$z=\frac{\hat{p}-p_{o}}{\sqrt{p_{o}(1-p_{o})/n}}$$
 
   `binom.test(S,n,po)`
 
+Diagrama de flujo para prueba de Hipotesis:
+
 ```mermaid
 flowchart TD
   A-->D(Binomial : binom.test)
@@ -39,11 +51,7 @@ flowchart TD
   B--Similar p.value-->C
 ```
 
-$S$= Número de éxitos en muestra $n$.
-
-El valor estimado de p es $\hat{p}=\frac{S}{n}$.
-
-Intervalo: $\hat{p} \pm z_{\alpha/2}\sqrt{\hat{p}(1-\hat{p})/n}$
+Ejemplos de libro:
 
 - Ejemplo 2.2.1
 
