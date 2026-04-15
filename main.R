@@ -76,6 +76,8 @@ prop.test(15, 59, .15, correct = FALSE)
 
 binom.test(15,59,.15)
 
+wilcox.test()
+
 help(wilcox.test)
 
 help(qqplot)

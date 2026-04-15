@@ -17,7 +17,26 @@ Pendientes:
 
 ## Proporciones
 
-### Paraméticas
+Para 1 proporción usar 1 de 3 métodos:
+
+- Cálculo manual (Aprox. Normal)
+$$z=\frac{\hat{p}-p_{o}}{\sqrt{p_{o}(1-p_{o})/n}}$$
+
+- Usando un $\chi^2=z^2$. Debe coincidir el $pvalue$ con el anterior.
+
+  `prop.test(S,n,correct=TRUE)`
+
+- Usando la dist. Binomial directamente.
+
+  `binom.test(S,n,po)`
+
+```mermaid
+flowchart TD
+  A-->D(Binomial : binom.test)
+  A(1 Proporción)-->B(Aprox. Normal : Calc. Manual)
+  A-->C(X2 = z2 : prop.test)
+  B--Similar p.value-->C
+```
 
 $S$= Número de éxitos en muestra $n$.
 
@@ -46,8 +65,8 @@ Son equivalentes: $\chi^2=z^2$ y R calcula los intervalos usando esa equivalenci
 # Ho: 15/59=.15
 
 # Calculando directamente usando distribución asintotica de S=exitos.
-z=(15/59-.15)/(sqrt((.15)*(.85)/59))
-1-pchisq(z^2,1)
+z <- (15 / 59 - .15) / (sqrt((.15) * (.85) / 59))
+1 - pchisq(z^2, 1)
 
 # R
 prop.test(15,59,.15,correct=FALSE)
@@ -57,7 +76,8 @@ prop.test(15,59,.15,correct=FALSE)
 # Usando la Distribución Binomial
 binom.test(15,59,.15)
 
-# Aquí el p-value es muy diferente aunque tambien rechaza ha Ho. Según el libro: "Debido a que los intervalos de confianza para muestras finitas son muy conservadores".
+# Aquí el p-value es muy diferente aunque tambien rechaza ha Ho. 
+# Según el libro: "Debido a que los intervalos de confianza para muestras finitas son muy conservadores".
 ```
 
 Flujo de analisis de tablas:
