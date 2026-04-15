@@ -20,6 +20,7 @@ Pendientes:
 Para 1 proporción usar 1 de 3 métodos:
 
 - Cálculo manual (Aprox. Normal)
+
 $$z=\frac{\hat{p}-p_{o}}{\sqrt{p_{o}(1-p_{o})/n}}$$
 
 - Usando un $\chi^2=z^2$. Debe coincidir el $pvalue$ con el anterior.
@@ -79,6 +80,8 @@ binom.test(15,59,.15)
 # Aquí el p-value es muy diferente aunque tambien rechaza ha Ho. 
 # Según el libro: "Debido a que los intervalos de confianza para muestras finitas son muy conservadores".
 ```
+
+## Tablas
 
 Flujo de analisis de tablas:
 
